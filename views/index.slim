@@ -1,0 +1,25 @@
+header
+  h1 MCG Source List
+  nav
+    a href="/about"
+      | about
+
+table
+  thead
+    tr
+      th
+      th title
+  tbody
+    - for source in sources do
+      tr
+        td
+          input type="radio" name="source-a"
+          input type="radio" name="source-b"
+        td
+          a href="http://mcg.herokuapp.com/#{source[:id_str]}/"
+            = source[:title]
+div.result
+  span.title
+  span.text
+  span.tweet
+  span.reload
