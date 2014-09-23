@@ -6,7 +6,7 @@
 
 #result {
   overflow-y: scroll;
-  border-top: thin solid #333;
+  border-top: thin solid #ccc;
   position: fixed;
   background-color: white;
   bottom: 0;
