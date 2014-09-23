@@ -4,6 +4,14 @@
   width: auto;
 }
 
+#select input[name="source-a"] {
+  margin-right: 0.75em;
+}
+
+#select input[name="source-b"] {
+  margin-right: 1em;
+}
+
 #result {
   overflow-y: scroll;
   border-top: thin solid #ccc;
