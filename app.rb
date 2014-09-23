@@ -7,7 +7,10 @@ Mongoid.load!(File.expand_path("./config/mongoid.yml", __dir__))
 
 class App < Sinatra::Base
   get '/' do
-    slim :index, locals: { sources: Source.all.sort(last_used_at: -1).limit(100) }
+    slim :index, locals: {
+      sources: Source.all.sort(last_used_at: -1).limit(100),
+      styles: %w(index),
+    }
   end
 
   get '/about' do

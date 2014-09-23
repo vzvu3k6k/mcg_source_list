@@ -1,25 +1,23 @@
-header
-  h1 MCG Source List
-  nav
-    a href="/about"
-      | about
+div#select
+  == slim :_nav_bar
+  .container
+    table#sources
+      tbody
+        - for source in sources do
+          tr
+            td
+              input type="radio" name="source-a" value=source[:id_str] data-title=source[:title]
+              input type="radio" name="source-b" value=source[:id_str] data-title=source[:title]
+            td
+              a href="http://mcg.herokuapp.com/#{source[:id_str]}/"
+                = source[:title]
 
-table
-  thead
-    tr
-      th
-      th title
-  tbody
-    - for source in sources do
-      tr
-        td
-          input type="radio" name="source-a"
-          input type="radio" name="source-b"
-        td
-          a href="http://mcg.herokuapp.com/#{source[:id_str]}/"
-            = source[:title]
-div.result
+div#result.container
   span.title
-  span.text
-  span.tweet
-  span.reload
+  button.reload.btn.btn-default.btn-xs リロード
+  div.tweet
+    iframe allowtransparency="true" frameborder="0" scrolling="no" style="width:110px; height:20px;"
+  p.text
+
+script src="/bower_components/jquery/dist/jquery.min.js"
+script src="/js/index.js"

@@ -1,8 +1,15 @@
 doctype html
 html
   head
-    title MCG source list
+    title
+      - if defined? title
+        = title + " - "
+      | MCG source list
     meta charset="utf-8"
+    link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"
+    - if defined? styles
+      - for style in styles do
+        link rel="stylesheet" href="/css/#{style}.css"
 
   body
     == yield

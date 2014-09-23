@@ -1,0 +1,41 @@
+#select {
+  height: 50vh;
+  overflow-y: scroll;
+  width: auto;
+}
+
+#result {
+  overflow-y: scroll;
+  border-top: thin solid #333;
+  position: fixed;
+  background-color: white;
+  bottom: 0;
+  height: 50vh;
+  width: 100%;
+  padding-top: 10px;
+}
+
+#result .tweet {
+  float: right;
+}
+#result .tweet iframe {
+  vertical-align: bottom;
+}
+
+#result.loading {
+  color: #999;
+}
+
+#result.loading .tweet {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#result.failed .tweet {
+  visibility: hidden;
+}
+
+#result .text {
+  text-align: center;
+  font-size: 63px;
+}
