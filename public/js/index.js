@@ -32,15 +32,17 @@ function sourcesToUrl(sources) {
     sources.map(function(i){return i.id_str}).join('/') + '/';
 }
 
+var lastXHR;
 function updateResult(sources) {
   if(!sources) sources = getSelectedSources();
   if(sources.length == 0) return;
+  if(lastXHR) lastXHR.abort();
   var $result = $('#result');
   var url = sourcesToUrl(sources);
 
   $result.addClass('loading');
 
-  $.getJSON(url + 'json')
+  lastXHR = $.getJSON(url + 'json')
     .always(function (){
       // Update title
       $result.find('.title').empty()
@@ -50,6 +52,8 @@ function updateResult(sources) {
 
       $result.removeClass('loading');
       $result.removeClass('init');
+
+      lastXHR = null;
     })
     .done(function(json) {
       // Update text
