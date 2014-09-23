@@ -13,7 +13,7 @@ $('#result .reload').on('click', function() {
 function getSelectedSources() {
   var sources = $.map(['source-a', 'source-b'], function(name) {
     var input = $sources.find('input[name="' + name + '"]:checked');
-    if (input) {
+    if (input.length > 0) {
       return { id_str: input.attr('value'), title: input.data("title") };
     } else {
       return null;
