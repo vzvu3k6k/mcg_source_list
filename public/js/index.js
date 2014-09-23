@@ -19,6 +19,11 @@ function getSelectedSources() {
       return null;
     }
   });
+
+  if (sources[0] && sources[1] && sources[0].id_str === sources[1].id_str) {
+    sources = [sources[0]];
+  }
+
   return sources.filter(function(i){return i !== null});
 }
 
