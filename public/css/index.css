@@ -39,3 +39,7 @@
   text-align: center;
   font-size: 63px;
 }
+
+#result.init * {
+  display: none;
+}

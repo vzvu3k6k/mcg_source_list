@@ -44,6 +44,7 @@ function updateResult(sources) {
                 .text(sources.map(function(i){return i.title}).join(' + ')));
 
       $result.removeClass('loading');
+      $result.removeClass('init');
     })
     .done(function(json) {
       // Update text
