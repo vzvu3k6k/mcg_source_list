@@ -14,6 +14,10 @@ class App < Sinatra::Base
   end
 
   get '/about' do
-    markdown :about
+    slim <<HERE
+== slim :_nav_bar
+.container
+  == markdown :about
+HERE
   end
 end
