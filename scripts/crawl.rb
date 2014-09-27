@@ -41,6 +41,8 @@ def get_tweets
   end
   puts "Saved #{count} tweets"
 
+  misc[:tweets].indexes.create(id: -1)
+
   founds
 end
 
