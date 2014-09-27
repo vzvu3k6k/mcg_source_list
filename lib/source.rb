@@ -8,5 +8,6 @@ class Source
   field :title, type: String
   field :last_used_at, type: Time
 
-  # index :id_str, unique: true
+  index({ id_str: 1 }, { unique: true })
+  index({ last_used_at: -1 })
 end
