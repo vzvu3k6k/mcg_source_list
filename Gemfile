@@ -6,6 +6,8 @@ gem 'redcarpet'
 
 gem 'mongoid', '~> 4.0.0'
 
+gem 'rake'
+
 gem 'twitter'
 gem 'nokogiri'
 
