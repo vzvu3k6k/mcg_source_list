@@ -30,16 +30,16 @@
   vertical-align: bottom;
 }
 
-#result.loading {
+#result[data-status="loading"] {
   color: #999;
 }
 
-#result.loading .tweet {
+#result[data-status="loading"] .tweet {
   opacity: 0.5;
   pointer-events: none;
 }
 
-#result.failed .tweet {
+#result[data-status="failed"] .tweet {
   visibility: hidden;
 }
 
@@ -48,6 +48,6 @@
   font-size: 63px;
 }
 
-#result.init * {
+#result[data-status="init"] * {
   display: none;
 }

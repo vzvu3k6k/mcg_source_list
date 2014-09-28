@@ -40,7 +40,7 @@ function updateResult(sources) {
   var $result = $('#result');
   var url = sourcesToUrl(sources);
 
-  $result.addClass('loading');
+  $result.attr('data-status', 'loading');
 
   lastXHR = $.getJSON(url + 'json')
     .always(function (){
@@ -49,9 +49,6 @@ function updateResult(sources) {
         .append($('<a />')
                 .attr('href', url)
                 .text(sources.map(function(i){return i.title}).join(' + ')));
-
-      $result.removeClass('loading');
-      $result.removeClass('init');
 
       lastXHR = null;
     })
@@ -68,12 +65,14 @@ function updateResult(sources) {
               count: 'horizontal'
             });
       $result.find('.tweet iframe').attr('src', iframeUrl);
+
+      $result.attr('data-status', 'succeeded');
     })
     .fail(function() {
       // Update text
       $result.find('.text').empty()
         .text('エラー: 更新失敗');
 
-      $result.addClass('failed');
+      $result.attr('data-status', 'failed');
     });
 }
