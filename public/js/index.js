@@ -34,9 +34,9 @@ function sourcesToUrl(sources) {
 
 var lastXHR;
 function updateResult(sources) {
-  if(!sources) sources = getSelectedSources();
-  if(sources.length == 0) return;
-  if(lastXHR) lastXHR.abort();
+  if (!sources) sources = getSelectedSources();
+  if (sources.length == 0) return;
+  if (lastXHR) lastXHR.abort();
   var $result = $('#result');
   var url = sourcesToUrl(sources);
 
