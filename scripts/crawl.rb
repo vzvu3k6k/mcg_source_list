@@ -20,12 +20,12 @@ def client
   end
 end
 
-def misc
-  @misc ||= Mongoid.default_session.with(database: "misc")
+def moped
+  @moped ||= Mongoid.default_session
 end
 
 def get_tweets
-  last_tweet = misc[:tweets].find.sort(id: -1).one
+  last_tweet = moped[:tweets].find.sort(id: -1).one
   founds = client.search(
     "mcg.herokuapp.com/",
     result_type: :recent,
@@ -36,12 +36,12 @@ def get_tweets
   # 後で使いたくなるかもしれないのでtweet自体も保存
   count = 0
   founds.each do |tweet|
-    misc[:tweets].insert(tweet.to_h) # Mongoidを使わずにMopedを経由
+    moped[:tweets].insert(tweet.to_h)
     count += 1
   end
   puts "Saved #{count} tweets"
 
-  misc[:tweets].indexes.create(id: -1)
+  moped[:tweets].indexes.create(id: -1)
 
   founds
 end
