@@ -1,0 +1,32 @@
+{
+  "name": "MCG source list",
+  "description": "Collects and shows sources of http://mcg.herokuapp.com/",
+  "success_url": "/",
+  "addons": [
+    "mongohq:sandbox",
+    "scheduler:standard"
+  ],
+  "env": {
+    "BUILDPACK_URL": "https://github.com/ddollar/heroku-buildpack-multi.git",
+    "TWITTER_CONSUMER_KEY": {
+      "description": "For scripts/crawl.rb",
+      "value": "",
+      "required": false
+    },
+    "TWITTER_CONSUMER_SECRET": {
+      "description": "For scripts/crawl.rb",
+      "value": "",
+      "required": false
+    },
+    "TWITTER_OAUTH_TOKEN": {
+      "description": "For scripts/crawl.rb",
+      "value": "",
+      "required": false
+    },
+    "TWITTER_OAUTH_SECRET": {
+      "description": "For scripts/crawl.rb",
+      "value": "",
+      "required": false
+    }
+  }
+}
