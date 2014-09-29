@@ -5,9 +5,9 @@ div.navbar.navbar-default.navbar-static-top role="navigation"
         | MCG Source List
     .collapse.navbar-collapse
       ul.nav.navbar-nav
-        li.active
+        li class=("active" if env["PATH_INFO"] == "/")
           a href="/"
             | Home
-        li
+        li class=("active" if env["PATH_INFO"] == "/about")
           a href="/about"
             | About
