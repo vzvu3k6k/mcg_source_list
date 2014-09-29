@@ -25,6 +25,7 @@
 
 #result .tweet {
   float: right;
+  margin-left: 1em;
 }
 #result .tweet iframe {
   vertical-align: bottom;
