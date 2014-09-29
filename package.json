@@ -10,5 +10,5 @@
     "postinstall": "./node_modules/bower/bin/bower install"
   },
   "author": "",
-  "license": "TBD"
+  "license": "CC0"
 }
