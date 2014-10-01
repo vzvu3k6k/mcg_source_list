@@ -16,25 +16,18 @@ GEM
     bson (2.3.0)
     buftok (0.2.0)
     builder (3.2.2)
-    celluloid (0.15.2)
-      timers (~> 1.1.0)
     coderay (1.1.0)
     connection_pool (2.0.0)
     debug_inspector (0.0.2)
     equalizer (0.0.9)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.3)
     http (0.6.1)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
     i18n (0.6.11)
     interception (0.5)
     json (1.8.1)
-    listen (2.7.9)
-      celluloid (>= 0.15.2)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
@@ -69,12 +62,7 @@ GEM
     rack-protection (1.5.3)
       rack
     rake (10.1.0)
-    rb-fsevent (0.9.4)
-    rb-inotify (0.9.5)
-      ffi (>= 0.5.0)
     redcarpet (3.1.2)
-    rerun (0.10.0)
-      listen (~> 2.7, >= 2.7.3)
     simple_oauth (0.2.0)
     sinatra (1.4.5)
       rack (~> 1.4)
@@ -87,7 +75,6 @@ GEM
     temple (0.6.8)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    timers (1.1.0)
     twitter (5.11.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -114,7 +101,6 @@ DEPENDENCIES
   pry-stack_explorer
   rake
   redcarpet
-  rerun
   sinatra
   slim
   twitter
