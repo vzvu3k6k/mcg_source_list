@@ -10,4 +10,8 @@ class Source
 
   index({ id_str: 1 }, { unique: true })
   index({ last_used_at: -1 })
+
+  def mcg_url
+    "http://mcg.herokuapp.com/#{id_str}/"
+  end
 end

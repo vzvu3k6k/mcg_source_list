@@ -9,7 +9,7 @@ div#select
               input type="radio" name="source-a" value=source[:id_str] data-title=source[:title]
               input type="radio" name="source-b" value=source[:id_str] data-title=source[:title]
             td
-              a href="http://mcg.herokuapp.com/#{source[:id_str]}/"
+              a href=source.mcg_url
                 = source[:title]
 
 div#result.container data-status="init"
