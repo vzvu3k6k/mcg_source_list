@@ -8,6 +8,9 @@ div.navbar.navbar-default.navbar-static-top role="navigation"
         li class=("active" if env["PATH_INFO"] == "/")
           a href="/"
             | Home
+        li
+          a href="/feed/sources.atom"
+            | New Sources
         li class=("active" if env["PATH_INFO"] == "/about")
           a href="/about"
             | About

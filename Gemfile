@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'sinatra'
 gem 'slim'
 gem 'redcarpet'
+gem 'builder'
 
 gem 'mongoid', '~> 4.0.0'
 

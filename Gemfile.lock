@@ -106,6 +106,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  builder
   mongoid (~> 4.0.0)
   nokogiri
   pry

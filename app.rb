@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'slim'
 require 'redcarpet'
+require 'builder'
 require_relative './lib/source'
 
 Mongoid.load!(File.expand_path("./config/mongoid.yml", __dir__))
@@ -19,5 +20,11 @@ class App < Sinatra::Base
 .container
   == markdown :about
 HERE
+  end
+
+  get '/feed/sources.atom' do
+    builder :"feed/sources", locals: {
+      sources: Source.all.sort(created_at: -1).limit(20),
+    }
   end
 end
